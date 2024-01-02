@@ -6,13 +6,24 @@
 /*   By: molasz-a <molasz.dev@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:32:36 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/10/26 19:40:16 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/02 12:21:08 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-int	str_len(char *str);
+void	ft_putstr(char *str)
+{
+	char	*t;
+
+	t = str;
+	while (*t != '\0')
+	{
+		ft_putchar(*t);
+		t++;
+	}
+	ft_putchar('\n');
+}
 
 int	main(int argc, char *argv[])
 {
@@ -21,18 +32,7 @@ int	main(int argc, char *argv[])
 	i = 0;
 	while (i++ < argc - 1)
 	{
-		write(1, argv[i], str_len(argv[i]));
-		write(1, "\n", 1);
+		ft_putstr(argv[i]);
 	}
 	return (0);
-}
-
-int	str_len(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }

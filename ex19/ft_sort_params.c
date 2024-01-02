@@ -6,15 +6,45 @@
 /*   By: molasz-a <molasz.dev@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 20:01:14 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/10/26 20:55:43 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/02 12:21:25 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-int		ft_strcmp(char *s1, char *s2);
-int		str_len(char *str);
-void	print_params(int argc, char *argv[]);
+void	ft_putstr(char *str)
+{
+	char	*t;
+
+	t = str;
+	while (*t != '\0')
+	{
+		ft_putchar(*t);
+		t++;
+	}
+	ft_putchar('\n');
+}
+
+void	print_params(int argc, char *argv[])
+{
+	int	i;
+
+	i = 0;
+	while (i++ < argc - 1)
+	{
+		ft_putstr(argv[i]);
+	}
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && (s1[i] != '\0' && s2[i] != '\0' ))
+		i++;
+	return (s1[i] - s2[i]);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -41,36 +71,4 @@ int	main(int argc, char *argv[])
 	}
 	print_params(argc, argv);
 	return (0);
-}
-
-void	print_params(int argc, char *argv[])
-{
-	int	i;
-
-	i = 0;
-	while (i++ < argc - 1)
-	{
-		write(1, argv[i], str_len(argv[i]));
-		write(1, "\n", 1);
-	}
-}
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] == s2[i] && (s1[i] != '\0' && s2[i] != '\0' ))
-		i++;
-	return (s1[i] - s2[i]);
-}
-
-int	str_len(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }

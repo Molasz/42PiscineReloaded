@@ -6,13 +6,11 @@
 /*   By: molasz-a <molasz.dev@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 11:26:57 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/10/20 11:44:50 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/02 12:16:27 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char *str);
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
@@ -21,7 +19,7 @@ void	ft_putstr(char *str)
 	t = str;
 	while (*t != '\0')
 	{
-		write(1, t, 1);
+		ft_putchar(*t);
 		t++;
 	}
 }

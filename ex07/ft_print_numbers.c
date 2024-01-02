@@ -6,13 +6,11 @@
 /*   By: molasz-a <molasz.dev@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 09:39:25 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/10/19 09:59:25 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/02 12:15:42 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_numbers(void);
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {
@@ -21,7 +19,7 @@ void	ft_print_numbers(void)
 	num = '0';
 	while (num <= '9')
 	{
-		write(1, &num, 1);
+		ft_putchar(num);
 		num++;
 	}
 }

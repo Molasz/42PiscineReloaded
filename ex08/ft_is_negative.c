@@ -6,18 +6,16 @@
 /*   By: molasz-a <molasz.dev@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 10:01:16 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/10/20 10:29:57 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/02 12:16:08 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_is_negative(int n);
+void	ft_putchar(char c);
 
 void	ft_is_negative(int n)
 {
 	if (n >= 0)
-		write(1, "P", 1);
+		ft_putchar('P');
 	else
-		write(1, "N", 1);
+		ft_putchar('N');
 }
