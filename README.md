@@ -1,4 +1,4 @@
 # 42 Piscine Reloaded
-### 42 piscine exercices with some changes
+### Exercises to review the 42 piscine
 
 ### **Don't copy this work**, write your own exercises and learn.
